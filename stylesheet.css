@@ -1,0 +1,687 @@
+/*-------------
+ 	General Section:
+-------------*/
+
+@font-face {
+
+font-family: minecraft;
+    src:
+        url('assets/fonts/minecraft.woff2') format('woff2'),
+        url('assets/fonts/minecraft.woff') format('woff'),
+        url('assets/fonts/minecraft.ttf') format('truetype');
+
+}
+
+*{
+
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+
+}
+
+body {
+
+	font-family: minecraft;
+	background-color: black;
+
+}
+
+.top {
+
+  --offset: 50px; 
+  position: sticky;
+  bottom: 1%;
+  left: 96%;
+  margin-top: calc(100vh + var(--offset));
+  padding: 10px;
+  width: 35px;
+  background: #AA00AA;
+  border-radius: 35px;
+  font-size: 35px;
+  text-decoration: none;
+  text-align: right;
+  color: white;
+  white-space: nowrap;
+  opacity: 85%;
+
+}
+
+ul, nav {
+
+	list-style: none;
+
+}
+
+a {
+
+	text-decoration: none;
+	color: inherit;
+	cursor: pointer;
+	opacity: 0.9;
+
+}
+
+a:hover {
+
+	opacity: 1.0;
+	cursor: hand;
+
+}
+
+a.btn {
+
+	color: white;
+	border-radius: 4px;
+	background-color: #2196F3;
+	font-weight: 800;
+	text-align: center;
+
+}
+
+section {
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 62.5px 50px;
+
+}
+
+@media (max-width: 1000px) {
+
+	section {
+
+		padding: 50px 25px;
+
+	}
+
+}
+
+@media (max-width: 600px) {
+
+	section {
+
+		padding: 40px 15px;
+
+	}
+
+}
+
+section p {
+
+	max-width: 800px;
+	text-align: center;
+	margin-bottom: 17.5px;
+	padding: 0 20px;
+
+}
+
+/* Outlines text with a white border to make it more visible */
+.outlined {
+
+	text-shadow: 0px 2px black;
+
+}
+
+/* Rounds the corners of images */
+.roundedcorners {
+
+	border-radius: 15px;
+
+}
+
+/* Make images appear at 100% zoom in responsive contexts */
+.zoomedout {
+
+	background-repeat: no-repeat;
+	background-position: center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+
+}
+
+/*-------------
+ 	Header Section:
+-------------*/
+
+header {
+
+	position: absolute;
+	top: 0;
+	z-index: 10;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: #FFFFFF;
+	padding-right: 3vh;
+	padding-bottom: 5vh;
+
+}
+
+header nav {
+
+	display: flex;
+	text-align: center;
+	font-size: 3vh;
+
+}
+
+header nav li {
+
+	margin: 0 2vh;
+	line-height: 5vh;
+
+}
+
+header nav li:first-child {
+
+	margin-left: 0;
+
+}
+
+header nav li:last-child {
+
+	margin-right: 0;	
+
+}
+
+@media (max-width: 1000px) {
+
+	header {
+
+		padding: 20px 30px;
+
+	}
+
+}
+
+@media (max-width: 700px) {
+
+	header {
+
+		flex-direction: column;
+
+	}
+
+	header h2 {
+
+		margin-bottom: 15px;
+
+	}
+
+}
+
+.main-logo {
+
+	max-width: 25%;
+	display: inline-block;
+	padding-left: 5%;
+
+}
+
+/*----------------
+ 	Flexbox Layout Section:
+----------------*/
+
+.box {
+
+    height: auto;
+	display: flex;
+	margin: 2%;
+	margin-left: 12%;
+	margin-right: 12%;
+
+}
+
+.flex-child {
+
+    flex: 1;
+    flex-wrap: wrap;
+
+}
+
+.splitter {
+
+    margin: 3%;
+
+}
+
+/*----------------
+ 	banner Section:
+----------------*/
+
+.banner {
+
+	position: relative;
+	justify-content: center;
+	min-height: 100vh;
+	text-align: center;
+	font-size: 45px;
+	text-shadow: 0 1px 0 #FFFFFF, 0 3px 0 #FFFFFF, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 20px 20px rgba(0,0,0,.15);
+	padding: 3em 0;
+
+}
+
+.banner .background-image {
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	z-index: -1;
+
+}
+
+.banner .background-image:after {
+
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0.15;
+
+}
+
+.simple-highlight {
+
+	background-color: #20202080;
+	margin: 8px, 8px, 4px, 4px;
+
+}
+
+@media (max-width: 800px) {
+
+	.hero {
+
+		min-height: 600px;
+
+	}
+
+}
+
+/*--------------------
+ 	Games Section:
+---------------------*/
+
+#smp {
+
+		background-image: url(assets/images/smp-banner-one.png);
+		background-size: cover;
+
+}
+
+#duels {
+
+		background-image: url(assets/images/smp-banner-six.png);
+		background-size: cover;
+
+}
+
+.container {
+
+	display: flex;
+	flex-wrap: wrap;
+	padding: 5%;
+	width: 40%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+}
+
+.games {
+
+	display: flex;
+	flex-wrap: wrap;
+
+}
+
+.grid div {
+
+	padding: 10px;
+	height: 350px;
+	border-radius: 3px;
+	background-clip: content-box;
+	background-size: cover;
+	background-position: center;
+
+}
+
+.games .grid div.small {
+
+	flex-basis: 40%;
+
+}
+
+.games .grid div large {
+
+	flex-basis: 60%;
+
+}
+
+
+@media (max-width: 1000px) {
+
+	.games .grid div small,
+	.games .grid div.large {
+
+		flex-basis: 100%;
+
+	}
+
+}
+
+/*----------------------
+ 	Features Section:
+----------------------*/
+
+.features {
+
+	background-color: #f7f7f7;
+
+}
+
+.features .grid nav {
+
+	flex-basis: 33%;
+	text-align: center;
+
+}
+
+.features .grid nav i {
+
+    font-size: 50px;
+    color: #2196F3;
+    margin-bottom: 25px;
+
+}
+
+.features .grid nav h4 {
+
+	color: #555;
+    font-size: 20px;
+    margin-bottom: 25px;
+
+}
+
+.features .grid li p {
+
+    margin: 0;
+
+}
+
+@media (max-width: 1000px) {
+
+	.features .grid li {
+
+		flex-basis: 70%;
+		margin-bottom: 65px;
+
+	}
+
+	.features .grid li:last-child {
+
+		margin-bottom: 0;
+
+	}
+
+}
+
+
+@media (max-width: 600px) {
+
+	.features .grid li {
+
+		flex-basis: 100%;
+
+	}
+
+}
+
+/*--------------------
+ 	Reviews Section:
+--------------------*/
+
+.reviews {
+
+	background-color: #FFFFFF;
+
+}
+
+.reviews .quote{
+
+	text-align: center;
+	width: 80%;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    padding: 0;
+
+}
+
+.reviews .author{
+
+    font-size: 18px;
+    margin-bottom: 50px;
+
+}
+
+.reviews .author:last-child{
+
+    margin-bottom: 0;
+
+}
+
+@media (max-width: 1000px) {
+
+	.reviews .quote{
+
+		font-size: 20px;
+
+	}
+
+	.reviews .author{
+
+	    font-size: 16px;
+
+	}
+
+}
+
+/*---------------------
+ 	Contact Section:
+---------------------*/
+
+.contact {
+
+	background-color: #f7f7f7;
+
+}
+
+.contact form {
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	max-width: 800px;
+	width: 80%;
+
+}
+
+.contact form input {
+
+	padding: 15px;
+	flex: 1;
+	margin-right: 30px;
+	font-size: 18px;
+	color: #555;
+
+}
+
+.contact form .btn{
+
+	padding: 18px 42px;
+
+}
+
+
+@media (max-width: 800px) {
+
+	.contact form input {
+
+		flex-basis: 100%;
+		margin: 0 0 20px 0;
+
+	}
+
+}
+
+/*-------------
+ 	Footer Section:
+-------------*/
+
+footer {
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	color: white;
+	background-color: black;
+	padding: 60px 0;
+
+}
+
+footer ul {
+
+	display: flex;
+	margin-bottom: 25px;
+	font-size: 32px;
+
+}
+
+footer ul li {
+
+	margin: 0 8px;
+
+}
+
+footer ul li:first-child {
+
+	margin-left: 0;
+
+}
+
+footer ul li:last-child {
+
+	margin-right: 0;	
+
+}
+
+footer p {
+
+	text-transform: uppercase;
+	font-size: 14px;
+	color: rgba(255,255,255,0.6);
+	margin-bottom: 10px;
+
+}
+
+footer p a {
+
+	color: #FFFFFF;
+
+}
+
+@media (max-width: 700px) {
+
+	footer {
+
+		padding: 80px 15px;
+
+	}
+
+}
+
+/*----------------
+ 	Color Section:
+----------------*/
+
+/* Minecraft color code "Dark Blue" (&1) */
+.bukkit-darkblue {
+
+	color: #0000AA;
+
+}
+.bukkit-darkblue {
+
+	background-color: #0000AA;
+
+}
+
+/* Minecraft color code "Gold" (&6) */
+.bukkit-gold {
+
+	color: #FFAA00;
+
+}
+
+/* Minecraft color code "Aqua" (&b) */
+.bukkit-blue {
+
+	color: #55FFFF;
+
+}
+
+/* Minecraft color code "Dark Red" (&4) */
+.bukkit-dark-red {
+
+	color: #AA0000;
+
+}
+
+/* Minecraft color code "Dark Green" (&2) */
+.bukkit-darkgreen {
+
+	color: #00AA00;
+
+}
+
+/* Minecraft color code "Green" (&a) */
+.bukkit-green {
+
+	color: #55FF55;
+
+}
+
+/* Minecraft color code "Dark Purple" (&5) */
+.bukkit-dark-purple {
+
+	color: #AA00AA;
+
+}
+
+
+/* Minecraft color code "Red" (&c) */
+.bukkit-red {
+
+	color: #FF5555;
+
+}
+
+/* The color used in the discord logo */
+.discord-blue {
+
+	color: #738ADB;
+
+}
