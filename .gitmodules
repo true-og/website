@@ -1,0 +1,3 @@
+[submodule "staffog-web"]
+	path = staffog-web
+	url = https://github.com/gxorge/staffog-web
