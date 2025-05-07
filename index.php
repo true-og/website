@@ -37,10 +37,11 @@
 		<!-- Declare Page Title. -->
 		<title>TrueOG</title>
 
-		<!-- Import Font Awesome 4.7 and keep the rendering engine awake using PHP trick. -->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css?v=<?php echo time(); ?>">
-		<!-- Import custom CSS and keep the rendering engine awake using PHP trick. -->
-		<link rel="stylesheet" href="stylesheet.css?v=<?php echo time(); ?>">
+		<!-- Import Font Awesome 6 -->
+		<link rel="stylesheet" href="Font-Awesome/css/all.min.css">
+
+		<!-- Import CSS -->
+		<link rel="stylesheet" href="stylesheet.css">
 
 	<!-- Close Head. -->
 	</head>
@@ -53,7 +54,7 @@
 
 			<!-- Display TrueOG logo in top left of navbar. -->
 			<a href="https://www.true-og.net/" target="_blank">
-			<img src="assets/images/logos/true-og-logo-transparent-background.png" class="main-logo" alt="Logo"></a>
+			<img src="assets/images/logos/true-og-logo-transparent.png" class="main-logo" alt="Logo"></a>
 
 			<!-- Declare navigation menu. -->
 			<nav class="outlined">
@@ -76,26 +77,9 @@
 		<!-- TODO: Refactor/Comment below this line -->
 		<section class="banner">
 			<div class="background-image" style="background-image: url(assets/images/galaxy-background.png);"></div>
-			<p class="simple-highlight bukkit-green">The <a href="https://github.com/true-og/true-og/">Open Source</a>,</p>
-			<p class="simple-highlight bukkit-blue">Community-First,</p>
-			<p><span class="simple-highlight bukkit-dark-red"><u>&nbsp;OG</u></span><span class="simple-highlight bukkit-gold">&nbsp;&nbsp;Minecraft Experience!&nbsp;</span></p>
-    		<h5 style="font-family: minecraft; text-shadow: 3px 3px 1px black; padding-top: 20px;" class="bukkit-blue">
-    		<?php
-    			$waiting_day = 1686837600;
-    			$time_left = $waiting_day - time();
-
-    			$days = floor($time_left / (60*60*24));
-    			$time_left %= (60 * 60 * 24);
-
-    			$hours = floor($time_left / (60 * 60));
-    			$time_left %= (60 * 60);
-
-    			$min = floor($time_left / 60);
-    			$time_left %= 60;
-
-    			echo "$days days, $hours hours, and $min minutes until soft launch.";
-    		?>
-    		</h5>
+			<p class="bukkit-green">The <a href="https://github.com/true-og/true-og/">Open Source</a>,</p>
+			<p class="bukkit-blue">Community-First,</p>
+			<p><span class="bukkit-dark-red">&nbsp;<u>OG</u></span><span class="bukkit-gold">&nbsp;&nbsp;Minecraft Experience!&nbsp;</span></p>
 
 			<a style="text-decoration:none; font-size: 3.5vw; color: #738ADB; margin-top: 8%; text-shadow: 0px 0px 30px white, 0 2px 0 white;" href="https://discord.gg/ma9pMYpBU6">&nbsp;JOIN DISCORD&nbsp;</a>
 		</section>
@@ -158,20 +142,19 @@
 
 		<footer>
 			<ul>
-				<li><a href="https://github.com/true-og/website/" target="_blank"><i class="fa fa-github-square"></i></a></li>
-				<li><a href="https://www.facebook.com/people/True-OG/100076093982787/" target="_blank"><i class="fa fa-facebook-square"></i></a></li>
-				<li><a href="https://twitter.com/TrueOGSMP/" target="_blank"><i class="fa fa-twitter-square"></i></a></li>
+			<li><a href="https://github.com/true-og/website" target="_blank"><i class="fab fa-github"></i></a></li>
+			<li><a href="https://mastodon.gamedev.place/@trueog" target="_blank"><i class="fab fa-mastodon"></i></a></li>
+			<li><a href="https://www.facebook.com/people/True-OG/100076093982787" target="_blank"><i class="fab fa-facebook"></i></a></li>
 			</ul>
-			<p><a href="https://shop.trueg.net/" target="_blank">Donation Store</a></p>
-			<p><br>Forked From <a href="https://tutorialzine.com/2016/06/freebie-landing-page-template-with-flexbox/" target="_blank">tutorialzine</a> under an<a href="https://tutorialzine.com/license/" target="_blank"> Open Source License</a><br><br></p>
-			<p><a href="https://questioncopyright.org/understanding-free-content/" target="_blank">
+			<p><br>Website based on a template from <a href="https://tutorialzine.com/2016/06/freebie-landing-page-template-with-flexbox/" target="_blank">tutorialzine</a> <br>Uses a permissive<a href="https://tutorialzine.com/license/" target="_blank"> Open Source License</a><br><br></p>
+			<p><a href="https://stpeter.im/writings/essays/publicdomain.html" target="_blank">
 			<img src="assets/images/logos/Anti-copyright.svg" style="width: 50px" alt="Anti-Copyright Logo"></a>
 			&nbsp;<a href="https://iww.org/" target="_blank">
 			<img src="assets/images/logos/iww.png" style="width: 48px" alt="IWW Union Logo"</a></a>
 			<p class="bukkit-blue"><br>Ad astra per aspera</p></span>
 		</footer>
 
-		<a href="#" class="top"><i class="fa fa-arrow-circle-o-up"></i></a>
+		<a href="#" class="top"><i class="fas fa-circle-up"></i></a>
 
 	</body>
 

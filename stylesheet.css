@@ -4,11 +4,10 @@
 
 @font-face {
 
-font-family: minecraft;
-    src:
-        url('assets/fonts/minecraft.woff2') format('woff2'),
-        url('assets/fonts/minecraft.woff') format('woff'),
-        url('assets/fonts/minecraft.ttf') format('truetype');
+	font-family: 'minecraft';
+	src: url('assets/fonts/Monocraft.woff2') format('woff2'),
+	url('assets/fonts/Monocraft.woff') format('woff'),
+	url('assets/fonts/Monocraft.ttf') format('truetype');
 
 }
 
@@ -22,7 +21,7 @@ font-family: minecraft;
 
 body {
 
-	font-family: minecraft;
+	font-family: 'minecraft', sans-serif;
 	background-color: black;
 
 }
