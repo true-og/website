@@ -5,9 +5,9 @@
 @font-face {
 
 	font-family: 'minecraft';
-	src: url('assets/fonts/Monocraft.woff2') format('woff2'),
-	url('assets/fonts/Monocraft.woff') format('woff'),
-	url('assets/fonts/Monocraft.ttf') format('truetype');
+	src: url('assets/fonts/Monocraft/Monocraft.woff2') format('woff2'),
+	url('assets/fonts/Monocraft/Monocraft.woff') format('woff'),
+	url('assets/fonts/Monocraft/Monocraft.ttf') format('truetype');
 
 }
 
