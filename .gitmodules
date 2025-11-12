@@ -1,6 +1,6 @@
 [submodule "staffog-web"]
 	path = staffog-web
-	url = https://github.com/gxorge/staffog-web.git
+	url = https://github.com/true-og/staffog-web
 [submodule "Font-Awesome"]
 	path = Font-Awesome
-	url = https://github.com/FortAwesome/Font-Awesome
+	url = https://github.com/true-og/Font-Awesome
