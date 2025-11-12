@@ -3,4 +3,4 @@
 	url = https://github.com/true-og/Font-Awesome.git
 [submodule "staffog-web"]
 	path = staffog-web
-	url = https://github.com/true-og/staffog-web
+	url = https://github.com/true-og/staffog-web.git
