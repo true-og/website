@@ -32,11 +32,15 @@
 		<!-- Declare Page Title. -->
 		<title>TrueOG</title>
 
-		<!-- Import Font Awesome 6 -->
-		<link rel="stylesheet" href="Font-Awesome/css/all.min.css">
+		<!-- Stylesheet URLs carry the file's modification time (?v=...), so a deploy that changes a
+		     stylesheet gives it a new URL and Cloudflare and browsers fetch it at once instead of
+		     serving a cached copy for hours. -->
+
+		<!-- Import Font Awesome 7 -->
+		<link rel="stylesheet" href="Font-Awesome/css/all.min.css?v=<?php echo @filemtime(__DIR__ . '/Font-Awesome/css/all.min.css'); ?>">
 
 		<!-- Import CSS -->
-		<link rel="stylesheet" href="stylesheet.css">
+		<link rel="stylesheet" href="stylesheet.css?v=<?php echo @filemtime(__DIR__ . '/stylesheet.css'); ?>">
 
 	<!-- Close Head. -->
 	</head>
