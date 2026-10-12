@@ -78,36 +78,7 @@ a.btn {
 
 }
 
-section {
-
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding: 62.5px 50px;
-
-}
-
-@media (max-width: 1000px) {
-
-	section {
-
-		padding: 50px 25px;
-
-	}
-
-}
-
-@media (max-width: 600px) {
-
-	section {
-
-		padding: 40px 15px;
-
-	}
-
-}
-
-section p {
+.banner p {
 
 	max-width: 800px;
 	text-align: center;
@@ -165,8 +136,9 @@ header nav {
 
 	display: flex;
 	text-align: center;
-	/* Height-based on landscape screens as before; capped by width so tall, narrow screens fit. */
-	font-size: min(3vh, 1.8vw);
+	/* Height-based on landscape screens as before; capped by width so tall, narrow screens fit, but
+	   never below a readable 14px (the header stacks instead when that doesn't fit on one row). */
+	font-size: max(14px, min(3vh, 1.8vw));
 
 }
 
@@ -193,13 +165,6 @@ header nav a {
 
 }
 
-/* Space between each button's icon and its label. */
-header nav i {
-
-	margin-right: 0.3em;
-
-}
-
 header nav li:first-child {
 
 	margin-left: 0;
@@ -222,27 +187,34 @@ header nav li:last-child {
 
 }
 
+/* Logo above a centered menu, for when the menu doesn't fit beside the logo on one row. The
+   script after the header in index.php sets this class. The menu gets the full width here, so it
+   can use larger text. */
+header.stacked {
+
+	flex-direction: column;
+
+}
+
+header.stacked .main-logo {
+
+	margin-left: 0;
+
+}
+
+header.stacked nav {
+
+	font-size: min(3vh, 4.4vw);
+
+}
+
+header.stacked nav ul {
+
+	justify-content: center;
+
+}
+
 @media (max-width: 700px) {
-
-	header {
-
-		flex-direction: column;
-
-	}
-
-	/* The header is a column here, so the buttons get the full width: allow larger text, and
-	   centre the rows when they wrap. */
-	header nav {
-
-		font-size: min(3vh, 4.4vw);
-
-	}
-
-	header nav ul {
-
-		justify-content: center;
-
-	}
 
 	header h2 {
 
@@ -252,11 +224,19 @@ header nav li:last-child {
 
 }
 
+/* The logo link is only as wide as the logo, so the menu gets the rest of the row. */
+header > a {
+
+	flex: none;
+	line-height: 0;
+
+}
+
 .main-logo {
 
-	max-width: 25%;
-	display: inline-block;
-	padding-left: 5%;
+	display: block;
+	width: min(95px, 16vw);
+	margin-left: 24px;
 
 }
 
@@ -294,6 +274,9 @@ header nav li:last-child {
 .banner {
 
 	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	justify-content: center;
 	min-height: 100vh;
 	text-align: center;
@@ -312,6 +295,36 @@ header nav li:last-child {
 	height: 100%;
 	background-size: cover;
 	z-index: -1;
+
+}
+
+/* Under a stacked header (narrow screens), start the banner text below the menu. */
+header.stacked ~ .banner {
+
+	padding-top: max(3em, calc(var(--menu-bottom, 0px) + 0.5em));
+
+}
+
+/* Join Discord: white text on Discord's brand color (4.6:1 contrast), so it reads clearly on the
+   background image while staying the most prominent thing in the banner. */
+.discord-button {
+
+	margin-top: 8%;
+	padding: 0.35em 0.8em;
+	font-size: clamp(22px, 3.5vw, 52px);
+	color: #FFFFFF;
+	background-color: #5865F2;
+	border-radius: 0.3em;
+	text-shadow: 0 2px 0 rgba(0, 0, 0, 0.35);
+	box-shadow: 0 0.12em 0 #3C45A5, 0 0 30px rgba(88, 101, 242, 0.5);
+	opacity: 1;
+
+}
+
+.discord-button:hover,
+.discord-button:focus-visible {
+
+	background-color: #4752C4;
 
 }
 

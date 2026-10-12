@@ -58,13 +58,13 @@
 				<ul>
 
 					<!-- Declare navigation button for Games. -->
-					<li><a href="#smp">&nbsp;&nbsp;<i class="fa-solid fa-gamepad bukkit-gold" aria-hidden="true"></i><strong>Games</strong></a></li>
+					<li><a href="#smp">&nbsp;&nbsp;<i class="fa-solid fa-gamepad bukkit-gold fa-width-auto" aria-hidden="true"></i> <strong>Games</strong></a></li>
 					<!-- Declare navigation button for Shop. -->
-					<li><a href="#shop">&nbsp;&nbsp;<i class="fa-solid fa-bag-shopping bukkit-red" aria-hidden="true"></i><strong>Shop</strong></a></li>
+					<li><a href="#shop">&nbsp;&nbsp;<i class="fa-solid fa-bag-shopping bukkit-red fa-width-auto" aria-hidden="true"></i> <strong>Shop</strong></a></li>
 					<!-- Declare navigation button for Team. -->
-					<li><a href="#team">&nbsp;&nbsp;<i class="fa-solid fa-users bukkit-dark-purple" aria-hidden="true"></i><strong>Team</strong></a></li>
+					<li><a href="#team">&nbsp;&nbsp;<i class="fa-solid fa-users bukkit-dark-purple fa-width-auto" aria-hidden="true"></i> <strong>Team</strong></a></li>
 					<!-- Declare navigation button for FAQ. -->
-					<li><a href="#faq">&nbsp;&nbsp;<i class="fa-solid fa-circle-question bukkit-darkgreen" aria-hidden="true"></i><strong>FAQ</strong></a></li>
+					<li><a href="#faq">&nbsp;&nbsp;<i class="fa-solid fa-circle-question bukkit-darkgreen fa-width-auto" aria-hidden="true"></i> <strong>FAQ</strong></a></li>
 
 				<!-- Close the list of navigation buttons. -->
 				</ul>
@@ -75,28 +75,57 @@
 		<!-- Close Header. -->
 		</header>
 
+		<!-- Keep the menu on one row beside the logo whenever it fits; otherwise stack the logo above
+		     a centered menu. Runs before first paint, again when fonts load, and on resize. -->
+		<script>
+			(function () {
+
+				var header = document.querySelector("header");
+				var list = header.querySelector("nav ul");
+
+				function layout() {
+
+					header.classList.remove("stacked");
+					list.style.flexWrap = "nowrap";
+					var fits = header.scrollWidth <= header.clientWidth;
+					list.style.flexWrap = "";
+					header.classList.toggle("stacked", !fits);
+
+					// A stacked header is taller; let the banner below keep its text clear of it.
+					var bottom = header.querySelector("nav").getBoundingClientRect().bottom + window.scrollY;
+					document.documentElement.style.setProperty("--menu-bottom", bottom + "px");
+
+				}
+
+				layout();
+				window.addEventListener("resize", layout);
+				if (document.fonts) document.fonts.ready.then(layout);
+
+			})();
+		</script>
+
 		<!-- TODO: Refactor/Comment below this line -->
-		<section class="banner">
+		<div class="banner">
 			<div class="background-image" style="background-image: url(assets/images/galaxy-background.png);"></div>
 			<p class="bukkit-green">The <a href="https://github.com/true-og/true-og/">Open Source</a>,</p>
 			<p class="bukkit-blue">Community-First,</p>
-			<p><span class="bukkit-dark-red">&nbsp;<u>OG</u></span><span class="bukkit-gold">&nbsp;&nbsp;Minecraft Experience!&nbsp;</span></p>
+			<p><span class="bukkit-red"><u>OG</u></span> <span class="bukkit-gold">Minecraft Experience!</span></p>
 
-			<a style="text-decoration:none; font-size: 3.5vw; color: #738ADB; margin-top: 8%; text-shadow: 0px 0px 30px white, 0 2px 0 white;" href="https://discord.gg/ma9pMYpBU6">&nbsp;JOIN DISCORD&nbsp;</a>
-		</section>
+			<a class="discord-button" href="https://discord.gg/ma9pMYpBU6"><i class="fa-brands fa-discord fa-width-auto" aria-hidden="true"></i> JOIN DISCORD</a>
+		</div>
 
 		<div class="games" id="smp">
 			<div class="box">
 				<div class="flex-child grid outlined">
-					<h1 style="color: white; text-align: center"><i class="fa-solid fa-cubes bukkit-darkgreen fa-width-auto" aria-hidden="true"></i>&nbsp;The <span class="bukkit-darkgreen">True</span><span class="bukkit-dark-red">OG</span> SMP:</h1>
-					<p style="color: white; font-size: 2.5vh; padding: 0vh"><br>Our biggest and best gamemode, the SMP is where it all began. <span class="bukkit-darkgreen">True</span><span class="bukkit-dark-red">OG</span>'s founders were once players on a server which announced a map reset and a general shift away from the "OG" gameplay meta.<br><br>We revolted against their bad choices by buying the map, splitting from the original server, and making the worlds into our own. We rebuilt the old SMP's features from the ground up, fixing many bugs, opening up the code to the community, and enhancing the experience wherever possible.<br><br>Our SMP has grown into its own, preserving the incredible history of the original worlds, enabling a unique, yet familiar meta that evokes memories of 2011-2013 community-run SMP servers.</p>
+					<h1 style="color: white; text-align: center"><i class="fa-solid fa-cubes bukkit-darkgreen fa-width-auto" aria-hidden="true"></i>&nbsp;The <span class="bukkit-green">True</span><span class="bukkit-red">OG</span> SMP:</h1>
+					<p style="color: white; font-size: 2.5vh; padding: 0vh"><br>Our biggest and best gamemode, the SMP is where it all began. <span class="bukkit-green">True</span><span class="bukkit-red">OG</span>'s founders were once players on a server which announced a map reset and a general shift away from the "OG" gameplay meta.<br><br>We revolted against their bad choices by buying the map, splitting from the original server, and making the worlds into our own. We rebuilt the old SMP's features from the ground up, fixing many bugs, opening up the code to the community, and enhancing the experience wherever possible.<br><br>Our SMP has grown into its own, preserving the incredible history of the original worlds, enabling a unique, yet familiar meta that evokes memories of 2011-2013 community-run SMP servers.</p>
 				</div>
 			</div>
 			<div class="box">
 				<div class="flex-child large grid zoomedout roundedcorners" style="filter: drop-shadow(0 0 0.3rem #FFAA00); background-image: url(assets/images/smp-banner-two.png)"></div>
 				<div class="flex-child small grid splitter outlined">
 					<h2 style="color: white; text-align: center"><strong class="bukkit-gold">The "OG" Meta:</strong></h2>
-					<p class="bukkit-gold" style="font-size: 2.5vh"><br>OG means more to us than "not being pay-to-win". OG is about maintaining and building upon what we loved about SMP servers back in the day. A simple, robust economy. Competative, fast-paced PvP. Worlds that become richer and more fun to explore as the versions go by, giving players a sense of deep time and community. The <span class="bukkit-darkgreen">True</span><span class="bukkit-red">OG</span> Meta is more "OG" than OG:SMP and more anarchistic than anarchy. Here, you are truly free to play however you want, on a fair playing field. No bots. No hacks. There's nothing quite like it in Minecraft, or any other game for that matter.</p>
+					<p class="bukkit-gold" style="font-size: 2.5vh"><br>OG means more to us than "not being pay-to-win". OG is about maintaining and building upon what we loved about SMP servers back in the day. A simple, robust economy. Competative, fast-paced PvP. Worlds that become richer and more fun to explore as the versions go by, giving players a sense of deep time and community. The <span class="bukkit-green">True</span><span class="bukkit-red">OG</span> Meta is more "OG" than OG:SMP and more anarchistic than anarchy. Here, you are truly free to play however you want, on a fair playing field. No bots. No hacks. There's nothing quite like it in Minecraft, or any other game for that matter.</p>
 				</div>
 			</div>
 			<div class="box">
@@ -111,8 +140,8 @@
 		<!-- <div class="games" id="duels">
 			<div class="box">
 				<div class="flex-child grid outlined">
-					<h1 style="color: white; text-align: center"><i class="fa-solid fa-heart-pulse bukkit-dark-red fa-width-auto" aria-hidden="true"></i>&nbsp;<span class="bukkit-darkgreen">True</span><span class="bukkit-dark-red">OG</span> Duels:</h1>
-					<p style="color: white; font-size: 2.5vh; padding: 0vh"><br>A long-requested feature of the Season 1 community, <span class="bukkit-darkgreen">True</span><span class="bukkit-red">OG</span> Duels allow you to challenge anyone to a fight without risking your gear, experience, or SMP stats. Duel stats are tracked in an entirely seperate system called <a href="https://dotesports.com/general/news/elo-ratings-explained-20565" target="_blank" class="bukkit-blue">ELO</a>.<br><br>All duels take place using glorious 1.8 PVP! You will be equipped with golden apples, ender pearls, a variety of potions, and weapons/armor according to your kit selections. You can cycle through a random arena, or pick your favorite from over a dozen custom builds. If you are feeling confident, you can even duel for Diamonds!</p>
+					<h1 style="color: white; text-align: center"><i class="fa-solid fa-heart-pulse bukkit-dark-red fa-width-auto" aria-hidden="true"></i>&nbsp;<span class="bukkit-green">True</span><span class="bukkit-red">OG</span> Duels:</h1>
+					<p style="color: white; font-size: 2.5vh; padding: 0vh"><br>A long-requested feature of the Season 1 community, <span class="bukkit-green">True</span><span class="bukkit-red">OG</span> Duels allow you to challenge anyone to a fight without risking your gear, experience, or SMP stats. Duel stats are tracked in an entirely seperate system called <a href="https://dotesports.com/general/news/elo-ratings-explained-20565" target="_blank" class="bukkit-blue">ELO</a>.<br><br>All duels take place using glorious 1.8 PVP! You will be equipped with golden apples, ender pearls, a variety of potions, and weapons/armor according to your kit selections. You can cycle through a random arena, or pick your favorite from over a dozen custom builds. If you are feeling confident, you can even duel for Diamonds!</p>
 				</div>
 			</div>
 			<div class="container bukkit-green" style="margin-bottom: 2vh; filter: drop-shadow(0 0 0.3rem black);">
