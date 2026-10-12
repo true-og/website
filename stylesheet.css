@@ -165,7 +165,17 @@ header nav {
 
 	display: flex;
 	text-align: center;
-	font-size: 3vh;
+	/* Height-based on landscape screens as before; capped by width so tall, narrow screens fit. */
+	font-size: min(3vh, 1.8vw);
+
+}
+
+/* The buttons sit in a list inside the nav; the list is the row of buttons. If they still don't fit,
+   they wrap onto another row rather than running off the screen. */
+header nav ul {
+
+	display: flex;
+	flex-wrap: wrap;
 
 }
 
@@ -173,6 +183,20 @@ header nav li {
 
 	margin: 0 2vh;
 	line-height: 5vh;
+
+}
+
+/* Keep each button's icon and label together on one line. */
+header nav a {
+
+	white-space: nowrap;
+
+}
+
+/* Space between each button's icon and its label. */
+header nav i {
+
+	margin-right: 0.3em;
 
 }
 
@@ -203,6 +227,20 @@ header nav li:last-child {
 	header {
 
 		flex-direction: column;
+
+	}
+
+	/* The header is a column here, so the buttons get the full width: allow larger text, and
+	   centre the rows when they wrap. */
+	header nav {
+
+		font-size: min(3vh, 4.4vw);
+
+	}
+
+	header nav ul {
+
+		justify-content: center;
 
 	}
 

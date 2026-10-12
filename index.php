@@ -14,25 +14,20 @@
 
 		<!-- Link to favicons for thumbnails in browsers. -->
 		<!-- Generic: -->
-		<link rel="icon" type="image/x-icon" href="assets/favicons/favicon.ico">
+		<link rel="icon" type="image/x-icon" href="assets/images/favicons/favicon.ico">
 		<link rel="icon" href="assets/images/favicons/favicon-32.png" sizes="32x32">
-		<link rel="icon" href="assets/images/favicons/favicon-57.png" sizes="57x57">
 		<link rel="icon" href="assets/images/favicons/favicon-76.png" sizes="76x76">
 		<link rel="icon" href="assets/images/favicons/favicon-96.png" sizes="96x96">
 		<link rel="icon" href="assets/images/favicons/favicon-128.png" sizes="128x128">
-		<link rel="icon" href="assets/images/favicons/favicon-192.png" sizes="192x192">
-		<link rel="icon" href="assets/images/favicons/favicon-228.png" sizes="228x228">
 		<!-- Android: -->
 		<link rel="shortcut icon" sizes="196x196" href="assets/images/favicons/favicon-196.png">
 		<!-- iOS: -->
-		<link rel="apple-touch-icon" href="assets/images/favicons/favicon-120.png" sizes="120x120">
-		<link rel="apple-touch-icon" href="assets/images/favicons/favicon-152.png" sizes="152x152">
 		<link rel="apple-touch-icon" href="assets/images/favicons/favicon-180.png" sizes="180x180">
 		<!-- Windows 8 IE 10: -->
 		<meta name="msapplication-TileColor" content="#FFFFFF">
 		<meta name="msapplication-TileImage" content="assets/images/favicons/favicon-144.png">
 		<!-- Windows 8.1 + IE11 and above: -->
-		<meta name="msapplication-config" content="assets/images/favicons/browserconfig.xml"/>
+		<meta name="msapplication-config" content="assets/images/favicons/browserconfig.xml">
 
 		<!-- Declare Page Title. -->
 		<title>TrueOG</title>
@@ -59,14 +54,20 @@
 			<!-- Declare navigation menu. -->
 			<nav class="outlined">
 
-				<!-- Declare navigation button for Games. -->
-				<li><a href="#smp">&nbsp;&nbsp;<i class="fa fa-gamepad bukkit-gold">&nbsp;&nbsp;</i><strong>Games</strong></a></li>
-				<!-- Declare navigation button for Shop. -->
-				<li><a href="#shop">&nbsp;&nbsp;<i class="fa fa-shopping-bag bukkit-red">&nbsp;&nbsp;</i><strong>Shop</strong></a></li>
-				<!-- Declare navigation button for Team. -->
-				<li><a href="#team">&nbsp;&nbsp;<i class="fa fa-users bukkit-dark-purple">&nbsp;&nbsp;</i><strong>Team</strong></a></li>
-				<!-- Declare navigation button for FAQ. -->
-				<li><a href="#faq">&nbsp;&nbsp;<i class="fa fa-question-circle bukkit-darkgreen">&nbsp;&nbsp;</i><strong>FAQ</strong></a></li>
+				<!-- Declare the list of navigation buttons. -->
+				<ul>
+
+					<!-- Declare navigation button for Games. -->
+					<li><a href="#smp">&nbsp;&nbsp;<i class="fa-solid fa-gamepad bukkit-gold" aria-hidden="true"></i><strong>Games</strong></a></li>
+					<!-- Declare navigation button for Shop. -->
+					<li><a href="#shop">&nbsp;&nbsp;<i class="fa-solid fa-bag-shopping bukkit-red" aria-hidden="true"></i><strong>Shop</strong></a></li>
+					<!-- Declare navigation button for Team. -->
+					<li><a href="#team">&nbsp;&nbsp;<i class="fa-solid fa-users bukkit-dark-purple" aria-hidden="true"></i><strong>Team</strong></a></li>
+					<!-- Declare navigation button for FAQ. -->
+					<li><a href="#faq">&nbsp;&nbsp;<i class="fa-solid fa-circle-question bukkit-darkgreen" aria-hidden="true"></i><strong>FAQ</strong></a></li>
+
+				<!-- Close the list of navigation buttons. -->
+				</ul>
 
 			<!-- Close navigation menu. -->
 			</nav>
@@ -87,7 +88,7 @@
 		<div class="games" id="smp">
 			<div class="box">
 				<div class="flex-child grid outlined">
-					<h1 style="color: white; text-align: center"><i class="fa fa-cubes bukkit-darkgreen"></i>&nbsp;The <span class="bukkit-darkgreen">True</span><span class="bukkit-dark-red">OG</span> SMP:</h1>
+					<h1 style="color: white; text-align: center"><i class="fa-solid fa-cubes bukkit-darkgreen fa-width-auto" aria-hidden="true"></i>&nbsp;The <span class="bukkit-darkgreen">True</span><span class="bukkit-dark-red">OG</span> SMP:</h1>
 					<p style="color: white; font-size: 2.5vh; padding: 0vh"><br>Our biggest and best gamemode, the SMP is where it all began. <span class="bukkit-darkgreen">True</span><span class="bukkit-dark-red">OG</span>'s founders were once players on a server which announced a map reset and a general shift away from the "OG" gameplay meta.<br><br>We revolted against their bad choices by buying the map, splitting from the original server, and making the worlds into our own. We rebuilt the old SMP's features from the ground up, fixing many bugs, opening up the code to the community, and enhancing the experience wherever possible.<br><br>Our SMP has grown into its own, preserving the incredible history of the original worlds, enabling a unique, yet familiar meta that evokes memories of 2011-2013 community-run SMP servers.</p>
 				</div>
 			</div>
@@ -110,7 +111,7 @@
 		<!-- <div class="games" id="duels">
 			<div class="box">
 				<div class="flex-child grid outlined">
-					<h1 style="color: white; text-align: center"><i class="fa fa-heartbeat bukkit-dark-red"></i>&nbsp;<span class="bukkit-darkgreen">True</span><span class="bukkit-dark-red">OG</span> Duels:</h1>
+					<h1 style="color: white; text-align: center"><i class="fa-solid fa-heart-pulse bukkit-dark-red fa-width-auto" aria-hidden="true"></i>&nbsp;<span class="bukkit-darkgreen">True</span><span class="bukkit-dark-red">OG</span> Duels:</h1>
 					<p style="color: white; font-size: 2.5vh; padding: 0vh"><br>A long-requested feature of the Season 1 community, <span class="bukkit-darkgreen">True</span><span class="bukkit-red">OG</span> Duels allow you to challenge anyone to a fight without risking your gear, experience, or SMP stats. Duel stats are tracked in an entirely seperate system called <a href="https://dotesports.com/general/news/elo-ratings-explained-20565" target="_blank" class="bukkit-blue">ELO</a>.<br><br>All duels take place using glorious 1.8 PVP! You will be equipped with golden apples, ender pearls, a variety of potions, and weapons/armor according to your kit selections. You can cycle through a random arena, or pick your favorite from over a dozen custom builds. If you are feeling confident, you can even duel for Diamonds!</p>
 				</div>
 			</div>
@@ -142,19 +143,19 @@
 
 		<footer>
 			<ul>
-			<li><a href="https://github.com/true-og/website" target="_blank"><i class="fab fa-github"></i></a></li>
-			<li><a href="https://mastodon.gamedev.place/@trueog" target="_blank"><i class="fab fa-mastodon"></i></a></li>
-			<li><a href="https://www.facebook.com/people/True-OG/100076093982787" target="_blank"><i class="fab fa-facebook"></i></a></li>
+			<li><a href="https://github.com/true-og/website" target="_blank" aria-label="TrueOG website source code on GitHub"><i class="fa-brands fa-github fa-width-auto" aria-hidden="true"></i></a></li>
+			<li><a href="https://mastodon.gamedev.place/@trueog" target="_blank" aria-label="TrueOG on Mastodon"><i class="fa-brands fa-mastodon fa-width-auto" aria-hidden="true"></i></a></li>
+			<li><a href="https://www.facebook.com/people/True-OG/100076093982787" target="_blank" aria-label="TrueOG on Facebook"><i class="fa-brands fa-facebook fa-width-auto" aria-hidden="true"></i></a></li>
 			</ul>
 			<p><br>Website based on a template from <a href="https://tutorialzine.com/2016/06/freebie-landing-page-template-with-flexbox/" target="_blank">tutorialzine</a> <br>Uses a permissive<a href="https://tutorialzine.com/license/" target="_blank"> Open Source License</a><br><br></p>
 			<p><a href="https://stpeter.im/writings/essays/publicdomain.html" target="_blank">
 			<img src="assets/images/logos/Anti-copyright.svg" style="width: 50px" alt="Anti-Copyright Logo"></a>
 			&nbsp;<a href="https://iww.org/" target="_blank">
-			<img src="assets/images/logos/iww.png" style="width: 48px" alt="IWW Union Logo"</a></a>
-			<p class="bukkit-blue"><br>Ad astra per aspera</p></span>
+			<img src="assets/images/logos/iww.png" style="width: 48px" alt="IWW Union Logo"></a></p>
+			<p class="bukkit-blue"><br>Ad astra per aspera</p>
 		</footer>
 
-		<a href="#" class="top"><i class="fas fa-circle-up"></i></a>
+		<a href="#" class="top" aria-label="Back to top"><i class="fa-solid fa-circle-up fa-width-auto" aria-hidden="true"></i></a>
 
 	</body>
 
