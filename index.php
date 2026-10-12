@@ -54,7 +54,7 @@
 
 			<!-- Display TrueOG logo in top left of navbar. -->
 			<a href="https://www.true-og.net/" target="_blank">
-			<img src="assets/images/logos/true-og-logo-transparent.png" class="main-logo" alt="Logo"></a>
+			<img src="assets/images/logos/trueog-logo-2026-transparent.png" class="main-logo" alt="Logo"></a>
 
 			<!-- Declare navigation menu. -->
 			<nav class="outlined">
