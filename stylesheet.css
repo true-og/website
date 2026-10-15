@@ -1,17 +1,19 @@
-/*-------------
- 	General Section:
--------------*/
+/*----------------------
+	General
+----------------------*/
 
+/* Monocraft, a pixel font in the style of Minecraft's; browsers take the first format they support. */
 @font-face {
 
 	font-family: 'minecraft';
-	src: url('assets/fonts/Monocraft/Monocraft.woff2') format('woff2'),
-	url('assets/fonts/Monocraft/Monocraft.woff') format('woff'),
-	url('assets/fonts/Monocraft/Monocraft.ttf') format('truetype');
+	src: url('assets/fonts/Monocraft/Monocraft.woff2?v=4.2') format('woff2'),
+	url('assets/fonts/Monocraft/Monocraft.woff?v=4.2') format('woff'),
+	url('assets/fonts/Monocraft/Monocraft.ttf?v=4.2') format('truetype');
 
 }
 
-*{
+/* Reset browser defaults; padding and borders count inside an element's width. */
+* {
 
 	margin: 0;
 	padding: 0;
@@ -19,39 +21,70 @@
 
 }
 
+/* Text scales gently with the screen width, never below 14px, and grows with browser zoom. */
 body {
 
 	font-family: 'minecraft', sans-serif;
+	font-size: clamp(14px, 0.8rem + 0.5vw, 26px);
 	background-color: black;
 
 }
 
-.top {
+h1 {
 
-  --offset: 50px; 
-  position: sticky;
-  bottom: 1%;
-  left: 96%;
-  margin-top: calc(100vh + var(--offset));
-  padding: 10px;
-  width: 35px;
-  background: #AA00AA;
-  border-radius: 35px;
-  font-size: 35px;
-  text-decoration: none;
-  text-align: right;
-  color: white;
-  white-space: nowrap;
-  opacity: 85%;
+	font-size: 1.5em;
 
 }
 
+h2 {
+
+	font-size: 1.25em;
+
+}
+
+/* Back-to-top button: its top margin keeps it below the first screen, then it sticks to the bottom-right corner. */
+.top {
+
+	position: sticky;
+	bottom: 1%;
+	display: block;
+	width: 55px;
+	height: 55px;
+	margin: calc(100vh + 50px) 1% 0 auto;
+	padding: 10px;
+	font-size: 35px;
+	line-height: 35px;
+	text-align: center;
+	text-decoration: none;
+	color: white;
+	background: #AA00AA;
+	border-radius: 50%;
+	opacity: 85%;
+
+}
+
+@media (max-width: 700px) {
+
+	.top {
+
+		width: 44px;
+		height: 44px;
+		padding: 8px;
+		font-size: 28px;
+		line-height: 28px;
+
+	}
+
+}
+
+/* Lists are used for navigation and icon rows, never as bulleted lists. */
 ul, nav {
 
 	list-style: none;
 
 }
 
+/* Links take the color of their surroundings and brighten slightly on hover. */
 a {
 
 	text-decoration: none;
@@ -64,171 +97,45 @@ a {
 a:hover {
 
 	opacity: 1.0;
-	cursor: hand;
 
 }
 
-a.btn {
-
-	color: white;
-	border-radius: 4px;
-	background-color: #2196F3;
-	font-weight: 800;
-	text-align: center;
-
-}
-
-.banner p {
-
-	max-width: 800px;
-	text-align: center;
-	margin-bottom: 17.5px;
-	padding: 0 20px;
-
-}
-
-/* Outlines text with a white border to make it more visible */
+/* Gives text a dark shadow so it stays readable over a background image. */
 .outlined {
 
 	text-shadow: 0px 2px black;
 
 }
 
-/* Rounds the corners of images */
+/* Rounds the corners of image panels. */
 .roundedcorners {
 
 	border-radius: 15px;
 
 }
 
-/* Make images appear at 100% zoom in responsive contexts */
+/* Fills a panel with its background image, centered and cropped rather than tiled. */
 .zoomedout {
 
 	background-repeat: no-repeat;
 	background-position: center center;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
 	background-size: cover;
 
 }
 
-/*-------------
- 	Header Section:
--------------*/
+/*----------------------
+	Header
+----------------------*/
 
+/* Logo on the left, menu on the right: the first row of the banner or page it sits in. */
 header {
 
-	position: absolute;
-	top: 0;
-	z-index: 10;
-	width: 100%;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	width: 100%;
+	padding: 2vh 3vh 2vh 24px;
 	color: #FFFFFF;
-	padding-right: 3vh;
-	padding-bottom: 5vh;
-
-}
-
-header nav {
-
-	display: flex;
-	text-align: center;
-	/* Height-based on landscape screens as before; capped by width so tall, narrow screens fit, but
-	   never below a readable 14px (the header stacks instead when that doesn't fit on one row). */
-	font-size: max(14px, min(3vh, 1.8vw));
-
-}
-
-/* The buttons sit in a list inside the nav; the list is the row of buttons. If they still don't fit,
-   they wrap onto another row rather than running off the screen. */
-header nav ul {
-
-	display: flex;
-	flex-wrap: wrap;
-
-}
-
-header nav li {
-
-	margin: 0 2vh;
-	line-height: 5vh;
-
-}
-
-/* Keep each button's icon and label together on one line. */
-header nav a {
-
-	white-space: nowrap;
-
-}
-
-header nav li:first-child {
-
-	margin-left: 0;
-
-}
-
-header nav li:last-child {
-
-	margin-right: 0;	
-
-}
-
-@media (max-width: 1000px) {
-
-	header {
-
-		padding: 20px 30px;
-
-	}
-
-}
-
-/* Logo above a centered menu, for when the menu doesn't fit beside the logo on one row. The
-   script after the header in index.php sets this class. The menu gets the full width here, so it
-   can use larger text. */
-header.stacked {
-
-	flex-direction: column;
-
-}
-
-header.stacked .main-logo {
-
-	margin-left: 0;
-
-}
-
-header.stacked nav {
-
-	font-size: min(3vh, 4.4vw);
-
-}
-
-header.stacked nav ul {
-
-	justify-content: center;
-
-}
-
-@media (max-width: 700px) {
-
-	header h2 {
-
-		margin-bottom: 15px;
-
-	}
-
-}
-
-/* The logo link is only as wide as the logo, so the menu gets the rest of the row. */
-header > a {
-
-	flex: none;
-	line-height: 0;
 
 }
 
@@ -236,56 +143,78 @@ header > a {
 
 	display: block;
 	width: min(95px, 16vw);
-	margin-left: 24px;
 
 }
 
-/*----------------
- 	Flexbox Layout Section:
-----------------*/
+header nav {
 
-.box {
+	font-size: clamp(14px, 0.7rem + 0.5vw, 22px);
+	text-align: center;
 
-    height: auto;
+}
+
+/* The row of buttons wraps onto another row rather than running off the screen. */
+header nav ul {
+
 	display: flex;
-	margin: 2%;
-	margin-left: 12%;
-	margin-right: 12%;
+	flex-wrap: wrap;
+	justify-content: flex-end;
 
 }
 
-.flex-child {
+header nav li {
 
-    flex: 1;
-    flex-wrap: wrap;
-
-}
-
-.splitter {
-
-    margin: 3%;
+	margin: 0 0.8em;
+	line-height: 2;
+	white-space: nowrap;
 
 }
 
-/*----------------
- 	banner Section:
-----------------*/
+header nav li:last-child {
 
+	margin-right: 0;
+
+}
+
+/* Narrow screens: logo above a centered menu, which then has room for larger text. */
+@media (max-width: 1000px) {
+
+	header {
+
+		flex-direction: column;
+		padding: 20px 30px;
+
+	}
+
+	header nav {
+
+		font-size: clamp(14px, 4vw, 20px);
+
+	}
+
+	header nav ul {
+
+		justify-content: center;
+
+	}
+
+}
+
+/*----------------------
+	Banner
+----------------------*/
+
+/* Full-screen opening panel: the header on top, the tagline centered in the rest. */
 .banner {
 
 	position: relative;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	justify-content: center;
 	min-height: 100vh;
-	text-align: center;
-	font-size: 45px;
-	text-shadow: 0 1px 0 #FFFFFF, 0 3px 0 #FFFFFF, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 20px 20px rgba(0,0,0,.15);
-	padding: 3em 0;
 
 }
 
+/* The background image sits behind everything in the banner, header included. */
 .banner .background-image {
 
 	position: absolute;
@@ -298,15 +227,30 @@ header > a {
 
 }
 
-/* Under a stacked header (narrow screens), start the banner text below the menu. */
-header.stacked ~ .banner {
+/* The white text shadow lifts the tagline off the image. */
+.tagline {
 
-	padding-top: max(3em, calc(var(--menu-bottom, 0px) + 0.5em));
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 2em 0 3em;
+	text-align: center;
+	font-size: 45px;
+	text-shadow: 0 1px 0 #FFFFFF, 0 3px 0 #FFFFFF, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 20px 20px rgba(0,0,0,.15);
 
 }
 
-/* Join Discord: white text on Discord's brand color (4.6:1 contrast), so it reads clearly on the
-   background image while staying the most prominent thing in the banner. */
+.tagline p {
+
+	max-width: 800px;
+	margin-bottom: 17.5px;
+	padding: 0 20px;
+
+}
+
+/* Join Discord: white on Discord's brand color (4.6:1 contrast). */
 .discord-button {
 
 	margin-top: 8%;
@@ -328,277 +272,637 @@ header.stacked ~ .banner {
 
 }
 
-.banner .background-image:after {
+/*----------------------
+	Section Layout
+----------------------*/
 
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	opacity: 0.15;
+/* A section below the banner: a column of .box rows over a background image, each row holding .flex-child panels. */
+.games {
 
-}
-
-.simple-highlight {
-
-	background-color: #20202080;
-	margin: 8px, 8px, 4px, 4px;
+	display: flex;
+	flex-direction: column;
+	color: white;
 
 }
 
-@media (max-width: 800px) {
+.games h1,
+.games h2 {
 
-	.hero {
+	text-align: center;
 
-		min-height: 600px;
+}
+
+/* One row. The side margins keep the content away from the screen edges. */
+.box {
+
+	display: flex;
+	margin: 2% 12%;
+
+}
+
+/* Phones: narrower side margins so the text keeps a usable width. */
+@media (max-width: 700px) {
+
+	.box {
+
+		margin: 3% 4%;
 
 	}
 
 }
 
-/*--------------------
- 	Games Section:
----------------------*/
+/* Panels in a row share its width equally unless sized below. */
+.flex-child {
 
-#smp {
-
-		background-image: url(assets/images/smp-banner-one.png);
-		background-size: cover;
+	flex: 1;
 
 }
 
-#duels {
+/* Breathing room around a text panel that sits beside an image panel. */
+.splitter {
 
-		background-image: url(assets/images/smp-banner-six.png);
-		background-size: cover;
-
-}
-
-.container {
-
-	display: flex;
-	flex-wrap: wrap;
-	padding: 5%;
-	width: 40%;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
+	margin: 3%;
 
 }
 
-.games {
+/* An image-and-text row: 60% image, 40% text; the image panel takes its height from the text. */
+.games .box > .flex-child.small {
 
-	display: flex;
-	flex-wrap: wrap;
-
-}
-
-.grid div {
-
-	padding: 10px;
-	height: 350px;
-	border-radius: 3px;
-	background-clip: content-box;
-	background-size: cover;
-	background-position: center;
+	flex: 2;
 
 }
 
-.games .grid div.small {
+.games .box > .flex-child.large {
 
-	flex-basis: 40%;
-
-}
-
-.games .grid div large {
-
-	flex-basis: 60%;
+	flex: 3;
 
 }
 
-
+/* Narrow screens: image and text stack, and the image panel gets a height of its own. */
 @media (max-width: 1000px) {
 
-	.games .grid div small,
-	.games .grid div.large {
+	.games .box {
+
+		flex-wrap: wrap;
+
+	}
+
+	.games .box > .flex-child.small,
+	.games .box > .flex-child.large {
 
 		flex-basis: 100%;
+
+	}
+
+	.games .box > .flex-child.large {
+
+		min-height: 40vh;
 
 	}
 
 }
 
 /*----------------------
- 	Features Section:
+	Games
 ----------------------*/
 
-.features {
+#smp {
 
-	background-color: #f7f7f7;
-
-}
-
-.features .grid nav {
-
-	flex-basis: 33%;
-	text-align: center;
+	background-image: url(assets/images/smp-banner-one.png);
+	background-size: cover;
 
 }
 
-.features .grid nav i {
+/*----------------------
+	Shop
+----------------------*/
 
-    font-size: 50px;
-    color: #2196F3;
-    margin-bottom: 25px;
+/* A dark gradient sits over the screenshot so the white text and rank cards stay readable. */
+#shop {
 
-}
-
-.features .grid nav h4 {
-
-	color: #555;
-    font-size: 20px;
-    margin-bottom: 25px;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(assets/images/bad-shop.png);
+	background-size: cover;
+	background-position: center;
 
 }
 
-.features .grid li p {
+/* The rank cards share one row and wrap onto more rows on narrow screens. */
+.ranks {
 
-    margin: 0;
-
-}
-
-@media (max-width: 1000px) {
-
-	.features .grid li {
-
-		flex-basis: 70%;
-		margin-bottom: 65px;
-
-	}
-
-	.features .grid li:last-child {
-
-		margin-bottom: 0;
-
-	}
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 3vh;
 
 }
 
-
-@media (max-width: 600px) {
-
-	.features .grid li {
-
-		flex-basis: 100%;
-
-	}
-
-}
-
-/*--------------------
- 	Reviews Section:
---------------------*/
-
-.reviews {
-
-	background-color: #FFFFFF;
-
-}
-
-.reviews .quote{
-
-	text-align: center;
-	width: 80%;
-    font-size: 22px;
-    font-weight: 300;
-    line-height: 1.5;
-    margin-bottom: 20px;
-    padding: 0;
-
-}
-
-.reviews .author{
-
-    font-size: 18px;
-    margin-bottom: 50px;
-
-}
-
-.reviews .author:last-child{
-
-    margin-bottom: 0;
-
-}
-
-@media (max-width: 1000px) {
-
-	.reviews .quote{
-
-		font-size: 20px;
-
-	}
-
-	.reviews .author{
-
-	    font-size: 16px;
-
-	}
-
-}
-
-/*---------------------
- 	Contact Section:
----------------------*/
-
-.contact {
-
-	background-color: #f7f7f7;
-
-}
-
-.contact form {
+/* The whole card is the link to the rank's store page. */
+.rank {
 
 	display: flex;
+	flex-direction: column;
 	align-items: center;
-	justify-content: center;
-	flex-wrap: wrap;
-	max-width: 800px;
-	width: 80%;
+	flex: 1 1 280px;
+	max-width: 420px;
+	padding: 2vh;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.55);
+	border-radius: 15px;
+	opacity: 1;
 
 }
 
-.contact form input {
+.rank:hover,
+.rank:focus-visible {
 
-	padding: 15px;
+	outline: 2px solid #FFAA00;
+
+}
+
+/* The rank badge image at the top of the card. */
+.rank img {
+
+	width: 100%;
+	max-width: 250px;
+	border-radius: 10px;
+
+}
+
+.rank .price {
+
+	margin: 1.5vh 0;
+	font-size: 1.6em;
+
+}
+
+/* The billing period sits on its own line under the price. */
+.rank .price span {
+
+	display: block;
+	font-size: 0.8em;
+	opacity: 0.7;
+
+}
+
+/* The benefit list fills the card so every Buy button sits on the same line across the row. */
+.rank ul {
+
+	align-self: stretch;
 	flex: 1;
-	margin-right: 30px;
-	font-size: 18px;
-	color: #555;
+	margin-bottom: 2vh;
+	text-align: left;
 
 }
 
-.contact form .btn{
+.rank li {
 
-	padding: 18px 42px;
-
-}
-
-
-@media (max-width: 800px) {
-
-	.contact form input {
-
-		flex-basis: 100%;
-		margin: 0 0 20px 0;
-
-	}
+	margin-bottom: 1vh;
 
 }
 
-/*-------------
- 	Footer Section:
--------------*/
+/* Lists have no bullets (see the General section), so each benefit gets a gold dash instead. */
+.rank li::before {
+
+	content: "- ";
+	color: #FFAA00;
+
+}
+
+.buy {
+
+	padding: 0.4em 1em;
+	font-size: 1em;
+	color: black;
+	background-color: #FFAA00;
+	border-radius: 0.3em;
+
+}
+
+.rank:hover .buy,
+.rank:focus-visible .buy {
+
+	background-color: #FFC84A;
+
+}
+
+/*----------------------
+	Team
+----------------------*/
+
+#team {
+
+	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(assets/images/sky.png);
+	background-size: cover;
+	background-position: center;
+
+}
+
+/* The staff cards share rows and wrap as needed. */
+.staff {
+
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 3vh;
+
+}
+
+.member {
+
+	flex: 0 1 220px;
+	padding: 2vh;
+	text-align: center;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.55);
+	border-radius: 15px;
+
+}
+
+/* Heads are 8x8 pixel art scaled up, so keep the pixels crisp rather than blurred. */
+.member img {
+
+	width: 128px;
+	max-width: 100%;
+	height: auto;
+	border-radius: 10px;
+	image-rendering: pixelated;
+
+}
+
+.member .name {
+
+	margin-top: 1.5vh;
+	font-size: 1.2em;
+
+}
+
+.member .role {
+
+	font-size: 0.9em;
+
+}
+
+/* Row of application buttons. */
+.apply {
+
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 2vh;
+	margin: 2vh 0 4vh;
+
+}
+
+.apply-button {
+
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5em;
+	padding: 0.5em 1em;
+	font-size: 1em;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.55);
+	border: 2px solid #AA00AA;
+	border-radius: 0.3em;
+
+}
+
+.apply-button:hover,
+.apply-button:focus-visible {
+
+	background-color: #AA00AA;
+
+}
+
+/*----------------------
+	World
+----------------------*/
+
+#world {
+
+	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(assets/images/front-page-headliner.png);
+	background-size: cover;
+	background-position: center;
+
+}
+
+/*----------------------
+	FAQ
+----------------------*/
+
+#faq {
+
+	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(assets/images/space.png);
+	background-size: cover;
+	background-position: center;
+
+}
+
+/* Two columns side by side; they stack on narrow screens. */
+.faq {
+
+	flex-wrap: wrap;
+	gap: 3vh;
+
+}
+
+.qa {
+
+	flex: 1 1 320px;
+	padding: 2vh;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.55);
+	border-radius: 15px;
+
+}
+
+/* A question (or a heading in the facts column), spaced away from the answer above it. */
+.qa .q {
+
+	margin-top: 2vh;
+	color: #FFAA00;
+
+}
+
+.qa .q:first-child {
+
+	margin-top: 0;
+
+}
+
+.qa a {
+
+	color: #55FFFF;
+	text-decoration: underline;
+
+}
+
+/*----------------------
+	Subpages
+----------------------*/
+
+/* apply.php and the policy routes: one section, tall enough that the footer never sits mid-screen. */
+.page {
+
+	min-height: 100vh;
+	padding-bottom: 4vh;
+
+}
+
+#apply {
+
+	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(/assets/images/sky.png);
+	background-size: cover;
+	background-position: center;
+
+}
+
+#policy {
+
+	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(/assets/images/space.png);
+	background-size: cover;
+	background-position: center;
+
+}
+
+/* Dark translucent text panel. */
+.panel {
+
+	padding: 3vh;
+	line-height: 1.5;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.55);
+	border-radius: 15px;
+
+}
+
+.panel p {
+
+	margin-bottom: 1.5vh;
+
+}
+
+.panel a {
+
+	color: #55FFFF;
+	text-decoration: underline;
+
+}
+
+.panel .apply-button {
+
+	text-decoration: none;
+	color: white;
+
+}
+
+/* Status message: closed form, failed send, validation summary. */
+.notice {
+
+	padding: 1.5vh 2vh;
+	background-color: rgba(255, 170, 0, 0.15);
+	border: 2px solid #FFAA00;
+	border-radius: 0.3em;
+
+}
+
+/* Policy documents. Lists get their bullets back here. */
+.policy h2 {
+
+	margin: 3vh 0 1.5vh;
+	font-size: 1.4em;
+	color: #FFAA00;
+
+}
+
+.policy h3 {
+
+	margin: 2vh 0 0.8vh;
+	font-size: 1.1em;
+	color: #55FFFF;
+
+}
+
+.policy ul,
+.policy ol {
+
+	margin: 0 0 1.5vh 1.5em;
+	list-style: disc;
+
+}
+
+.policy ol {
+
+	list-style: decimal;
+
+}
+
+.policy li {
+
+	margin-bottom: 0.6vh;
+
+}
+
+.policy .note,
+.policy .source {
+
+	font-size: 0.85em;
+	opacity: 0.8;
+
+}
+
+.policy .source {
+
+	margin-top: 4vh;
+
+}
+
+/* Application form fields. */
+.field {
+
+	margin-bottom: 3vh;
+
+}
+
+fieldset {
+
+	border: 0;
+	min-width: 0;
+
+}
+
+/* The whole form is disabled while applications are closed. */
+fieldset:disabled {
+
+	opacity: 0.6;
+
+}
+
+.field .question {
+
+	display: block;
+	margin-bottom: 1vh;
+	color: #FFAA00;
+
+}
+
+.field .required {
+
+	color: #FF5555;
+
+}
+
+.field .hint {
+
+	margin-bottom: 1vh;
+	font-size: 0.85em;
+	opacity: 0.7;
+
+}
+
+.field input[type="text"],
+.field input[type="url"],
+.field input[type="number"],
+.field textarea {
+
+	width: 100%;
+	padding: 0.6em 0.8em;
+	font: inherit;
+	color: white;
+	background-color: rgba(255, 255, 255, 0.08);
+	border: 2px solid #555555;
+	border-radius: 0.3em;
+
+}
+
+.field input[type="number"] {
+
+	width: 8em;
+
+}
+
+.field textarea {
+
+	min-height: 8em;
+	resize: vertical;
+
+}
+
+.field input:focus,
+.field textarea:focus {
+
+	outline: none;
+	border-color: #FFAA00;
+
+}
+
+.field.invalid input,
+.field.invalid textarea {
+
+	border-color: #FF5555;
+
+}
+
+/* A radio or checkbox with its label. */
+.field .choice {
+
+	display: flex;
+	align-items: flex-start;
+	gap: 0.6em;
+	margin-bottom: 0.8vh;
+	cursor: pointer;
+
+}
+
+.field .choice input {
+
+	flex: none;
+	width: 1.1em;
+	height: 1.1em;
+	margin-top: 0.2em;
+	accent-color: #FFAA00;
+
+}
+
+.field .error {
+
+	margin-top: 0.8vh;
+	color: #FF5555;
+
+}
+
+.submit {
+
+	padding: 0.5em 1.2em;
+	font: inherit;
+	font-size: 1em;
+	color: black;
+	background-color: #FFAA00;
+	border: 0;
+	border-radius: 0.3em;
+	cursor: pointer;
+
+}
+
+.submit:hover,
+.submit:focus-visible {
+
+	background-color: #FFC84A;
+
+}
+
+/* Spam trap: off screen for people, visible to bots. */
+.honeypot {
+
+	position: absolute;
+	left: -9999px;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+
+}
+
+/*----------------------
+	Footer
+----------------------*/
 
 footer {
 
@@ -612,6 +916,7 @@ footer {
 
 }
 
+/* Row of social icons. */
 footer ul {
 
 	display: flex;
@@ -634,7 +939,7 @@ footer ul li:first-child {
 
 footer ul li:last-child {
 
-	margin-right: 0;	
+	margin-right: 0;
 
 }
 
@@ -663,75 +968,120 @@ footer p a {
 
 }
 
-/*----------------
- 	Color Section:
-----------------*/
+/*----------------------
+	Colors
+----------------------*/
 
-/* Minecraft color code "Dark Blue" (&1) */
+/* Minecraft's sixteen chat colors by code. .bukkit-blue is Aqua (&b); Blue (&9) is .bukkit-true-blue. */
+
+/* Black (&0) */
+.bukkit-black {
+
+	color: #000000;
+
+}
+
+/* Dark Blue (&1) */
 .bukkit-darkblue {
 
 	color: #0000AA;
 
 }
-.bukkit-darkblue {
 
-	background-color: #0000AA;
-
-}
-
-/* Minecraft color code "Gold" (&6) */
-.bukkit-gold {
-
-	color: #FFAA00;
-
-}
-
-/* Minecraft color code "Aqua" (&b) */
-.bukkit-blue {
-
-	color: #55FFFF;
-
-}
-
-/* Minecraft color code "Dark Red" (&4) */
-.bukkit-dark-red {
-
-	color: #AA0000;
-
-}
-
-/* Minecraft color code "Dark Green" (&2) */
+/* Dark Green (&2) */
 .bukkit-darkgreen {
 
 	color: #00AA00;
 
 }
 
-/* Minecraft color code "Green" (&a) */
-.bukkit-green {
+/* Dark Aqua (&3) */
+.bukkit-dark-aqua {
 
-	color: #55FF55;
+	color: #00AAAA;
 
 }
 
-/* Minecraft color code "Dark Purple" (&5) */
+/* Dark Red (&4) */
+.bukkit-dark-red {
+
+	color: #AA0000;
+
+}
+
+/* Dark Purple (&5) */
 .bukkit-dark-purple {
 
 	color: #AA00AA;
 
 }
 
+/* Gold (&6) */
+.bukkit-gold {
 
-/* Minecraft color code "Red" (&c) */
+	color: #FFAA00;
+
+}
+
+/* Gray (&7) */
+.bukkit-gray {
+
+	color: #AAAAAA;
+
+}
+
+/* Dark Gray (&8) */
+.bukkit-dark-gray {
+
+	color: #555555;
+
+}
+
+/* Blue (&9) */
+.bukkit-true-blue {
+
+	color: #5555FF;
+
+}
+
+/* Green (&a) */
+.bukkit-green {
+
+	color: #55FF55;
+
+}
+
+/* Aqua (&b) */
+.bukkit-blue {
+
+	color: #55FFFF;
+
+}
+
+/* Red (&c) */
 .bukkit-red {
 
 	color: #FF5555;
 
 }
 
-/* The color used in the discord logo */
-.discord-blue {
+/* Light Purple (&d) */
+.bukkit-light-purple {
 
-	color: #738ADB;
+	color: #FF55FF;
+
+}
+
+/* Yellow (&e) */
+.bukkit-yellow {
+
+	color: #FFFF55;
+
+}
+
+/* White (&f) */
+.bukkit-white {
+
+	color: #FFFFFF;
 
 }

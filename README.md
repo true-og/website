@@ -1,9 +1,12 @@
-# TrueOG Website
+# TrueOG Network Website
 
-This is the primary git repository representing the live state on [TrueOG.net](https://true-og.net/).
+Source of [true-og.net](https://true-og.net/). Plain PHP, HTML5, and CSS. No JavaScript.
 
-The code for the website is licensed under the permissive [Tutorialzine License](https://github.com/true-og/website/blob/main/LICENSE).
+- `index.php` is the front page, `site.php` everything else, `stylesheet.css` the styles. 
+- Runs on PHP 8.0+ under nginx, behind Cloudflare's orange proxy.
+- The fillable forms show as closed if dependencies are missing.
+- Secrets: copy `.secrets.template` to `../.secrets`, `discord_webhook` is for the form notifications;  `applications_file` `../databases/applications.txt` catches them if Discord is down.
+- Staff Heads come from mc-heads.net through `/head/?u=<uuid>`, cached for a day.
+- Dependencies: [Font Awesome Free](https://fontawesome.com/) 7.3.1 (`Font-Awesome` submodule), [Monocraft](https://github.com/IdreesInc/Monocraft) 4.2 (`assets/fonts/`), and the 2016 [Tutorialzine flexbox template](https://tutorialzine.com/2016/06/freebie-landing-page-template-with-flexbox/) the layout grew from.
 
-The font is licensed under [MIT](https://github.com/true-og/website/blob/788330a55a16471a80782750419444a46fe2b938/assets/fonts/LICENSE).
-
-All other assets, including TrueOG's logos, and the TrueOG Staff Panel, are licensed under [The Unlicense](https://github.com/true-og/website/blob/main/assets/images/LICENSE).
+Licenses: `index.php` and `stylesheet.css` [Tutorialzine](LICENSE); `site.php` and the stubs [Unlicense](https://unlicense.org/); Monocraft [OFL 1.1](assets/fonts/Monocraft/LICENSE); Font Awesome [its own](Font-Awesome/LICENSE.txt); all other assets [Unlicense](assets/images/LICENSE).
