@@ -5,7 +5,7 @@ page_start('', 'banner');
 			<!-- Full-screen banner: galaxy background behind the header, tagline centered below it. -->
 			<div class="background-image" style="background-image: url(assets/images/galaxy-background.png);"></div>
 			<div class="tagline">
-				<p class="bukkit-green">The <a href="https://github.com/true-og/true-og/">Open Source</a>,</p>
+				<p class="bukkit-green">The <a href="https://git.trueog.net/trueog/true-og">Open Source</a>,</p>
 				<p class="bukkit-blue">Community-First,</p>
 				<p><span class="bukkit-red"><u>OG</u></span> <span class="bukkit-gold">Minecraft Experience!</span></p>
 				<a class="discord-button" href="https://discord.gg/ma9pMYpBU6"><i class="fa-brands fa-discord fa-width-auto" aria-hidden="true"></i> JOIN DISCORD</a>
@@ -44,7 +44,7 @@ page_start('', 'banner');
 			<div class="box">
 				<div class="flex-child small splitter bukkit-green outlined">
 					<h2><strong>Open Source:</strong></h2>
-					<p><br><span class="bukkit-green">True</span><span class="bukkit-red">OG</span> is run by a dedicated Socialist and open source advocate. As such, the server is <a href="https://github.com/true-og/true-og" target="_blank" class="bukkit-blue">published to GitHub</a> in its entirety. Original code uses <a href="https://unlicense.org/" target="_blank" class="bukkit-blue">The Unlicense</a>, meaning it is released into the public domain for any purpose, commercial or personal, for free, forever. The code for community projects utilized by <span class="bukkit-green">True</span><span class="bukkit-red">OG</span> is linked to on GitHub. Their respective terms must be followed. The only proprietary part of <span class="bukkit-green">True</span><span class="bukkit-red">OG</span> is our post-launch map and seed. This is to prevent coordinates and bases from being compromised.</p>
+					<p><br><span class="bukkit-green">True</span><span class="bukkit-red">OG</span> is run by a dedicated Socialist and open source advocate. As such, the server is <a href="https://git.trueog.net/trueog/true-og" target="_blank" class="bukkit-blue">published on Gitea</a> in its entirety. Original code uses <a href="https://unlicense.org/" target="_blank" class="bukkit-blue">The Unlicense</a>, meaning it is released into the public domain for any purpose, commercial or personal, for free, forever. The code for community projects utilized by <span class="bukkit-green">True</span><span class="bukkit-red">OG</span> is linked to on GitHub. Their respective terms must be followed. The only proprietary part of <span class="bukkit-green">True</span><span class="bukkit-red">OG</span> is our post-launch map and seed. This is to prevent coordinates and bases from being compromised.</p>
 				</div>
 				<div class="flex-child large zoomedout roundedcorners" style="filter: drop-shadow(0 0 0.3rem #55FF55); background-image: url(assets/images/smp-banner-four.png)"></div>
 			</div>
@@ -196,11 +196,11 @@ page_start('', 'banner');
 					<p class="q"><i class="fa-solid fa-microchip fa-width-auto" aria-hidden="true"></i> Hardware:</p>
 					<p>Dedicated AMD Ryzen 9 5950X | 128GB RAM | 2x 1.92TB NVMe SSD | 1Gbps Unmetered Connection</p>
 					<p class="q"><i class="fa-solid fa-gear fa-width-auto" aria-hidden="true"></i> Software:</p>
-					<p><a href="https://github.com/true-og/Purpur" target="_blank">Purpur</a> 1.19.4 with custom patches for TrueOG Network</p>
+					<p><a href="https://git.trueog.net/trueog/Purpur" target="_blank">Purpur</a> 1.19.4 with custom patches for TrueOG Network</p>
 					<p class="q"><i class="fa-solid fa-scale-balanced fa-width-auto" aria-hidden="true"></i> Rules:</p>
 					<p><a href="/rules/">true-og.net/rules</a></p>
 					<p class="q"><i class="fa-solid fa-code fa-width-auto" aria-hidden="true"></i> Source Code:</p>
-					<p><a href="https://github.com/true-og/true-og" target="_blank">TrueOG on GitHub</a></p>
+					<p><a href="https://git.trueog.net/trueog/true-og" target="_blank">TrueOG on Gitea</a></p>
 					<p class="q"><i class="fa-solid fa-bag-shopping fa-width-auto" aria-hidden="true"></i> Donation Store:</p>
 					<p><a href="https://store.trueog.net/" target="_blank">store.trueog.net</a></p>
 				</div>

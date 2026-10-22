@@ -184,7 +184,7 @@ function page_end(): void {
 ?>
 		<footer>
 			<ul>
-				<li><a href="https://github.com/true-og/website" target="_blank" aria-label="TrueOG website source code on GitHub"><i class="fa-brands fa-github fa-width-auto" aria-hidden="true"></i></a></li>
+				<li><a href="https://git.trueog.net/trueog/website" target="_blank" aria-label="TrueOG website source code on Gitea"><i class="fa-solid fa-code-branch fa-width-auto" aria-hidden="true"></i></a></li>
 				<li><a href="https://mastodon.gamedev.place/@trueog" target="_blank" aria-label="TrueOG on Mastodon"><i class="fa-brands fa-mastodon fa-width-auto" aria-hidden="true"></i></a></li>
 				<li><a href="https://www.facebook.com/people/True-OG/100076093982787" target="_blank" aria-label="TrueOG on Facebook"><i class="fa-brands fa-facebook fa-width-auto" aria-hidden="true"></i></a></li>
 				<li><a href="https://reddit.com/r/trueog" target="_blank" aria-label="TrueOG on Reddit"><i class="fa-brands fa-reddit fa-width-auto" aria-hidden="true"></i></a></li>
@@ -296,7 +296,7 @@ function rules_html(string $text): string {
 
 }
 
-/* A document from the true-og repository's policies/: the sibling directory when deployed as its submodule, else GitHub, cached for an hour. */
+/* A document from the true-og repository's policies/: the sibling directory when deployed as its submodule, else Gitea, cached for an hour. */
 function policy_page(string $key): void {
 
 	$docs = [
@@ -307,8 +307,8 @@ function policy_page(string $key): void {
 	];
 	[$file, $title, $icon] = $docs[$key];
 	$local = dirname(__DIR__) . '/policies/' . $file;
-	$github = 'https://github.com/true-og/true-og/blob/main/policies/' . $file;
-	$raw = 'https://raw.githubusercontent.com/true-og/true-og/main/policies/' . $file;
+	$source = 'https://git.trueog.net/trueog/true-og/src/branch/main/policies/' . $file;
+	$raw = 'https://git.trueog.net/trueog/true-og/raw/branch/main/policies/' . $file;
 
 	if (is_file($local)) {
 
@@ -334,11 +334,11 @@ function policy_page(string $key): void {
 			<div class="box">
 				<div class="flex-child panel policy outlined">
 <?php if ($text === null) { ?>
-					<p class="notice">This document could not be loaded right now. Read it <a href="<?php echo e($github); ?>" target="_blank" rel="noopener">on GitHub</a> in the meantime.</p>
+					<p class="notice">This document could not be loaded right now. Read it <a href="<?php echo e($source); ?>" target="_blank" rel="noopener">on Gitea</a> in the meantime.</p>
 <?php } else { ?>
 <?php echo $key === 'rules' ? rules_html($text) : $text; ?>
 <?php } ?>
-					<p class="source">Maintained in the <a href="<?php echo e($github); ?>" target="_blank" rel="noopener">TrueOG repository on GitHub</a>.</p>
+					<p class="source">Maintained in the <a href="<?php echo e($source); ?>" target="_blank" rel="noopener">TrueOG repository on Gitea</a>.</p>
 				</div>
 			</div>
 		</div>
