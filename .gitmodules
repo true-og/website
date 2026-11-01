@@ -1,6 +1,6 @@
 [submodule "Font-Awesome"]
 	path = Font-Awesome
-	url = https://github.com/true-og/Font-Awesome.git
+	url = https://git.trueog.net/trueog/Font-Awesome
 [submodule "staffog-web"]
 	path = staffog-web
-	url = https://github.com/true-og/staffog-web.git
+	url = https://git.trueog.net/trueog/staffog-web
